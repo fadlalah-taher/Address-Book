@@ -1,4 +1,4 @@
-require('./src/db/mongoose');
+require('./src/db/db/mongoose');
 const express = require('express');
 
 const app = express();
