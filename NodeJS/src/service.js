@@ -1,6 +1,14 @@
 const User = require('../model/User');
 
 
+async function getUsers() {
+    return await User.find();
+  }
+  
+  async function getById(id) {
+    return await User.findById(id);
+  }
+
 async function addUser(body, hashPassword) {
     const {
       name,
@@ -22,4 +30,4 @@ async function getByEmail(email) {
     });
   }
 
-module.exports = {addUser, getByEmail}
+module.exports = {addUser, getByEmail, getById, getUsers}
