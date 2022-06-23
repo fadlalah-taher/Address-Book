@@ -16,4 +16,10 @@ async function addUser(body, hashPassword) {
     return await user.save();
 }
 
-module.exports = {addUser}
+async function getByEmail(email) {
+    return await User.findOne({
+      email
+    });
+  }
+
+module.exports = {addUser, getByEmail}

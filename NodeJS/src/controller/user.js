@@ -1,6 +1,7 @@
-const {addUser} = require('../service');
+const {addUser, getByEmail} = require('../service');
 const bcrypt = require('bcryptjs');
-
+const jwt = require('jsonwebtoken');
+const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
 
 async function register(req, res) {
     try {

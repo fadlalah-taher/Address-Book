@@ -16,6 +16,6 @@ function userMiddleware() {
       }
       return next();
     }
-  }
-  
-  module.exports = userMiddleware;
+}
+
+module.exports = userMiddleware;
