@@ -1,4 +1,4 @@
-const {addUser, getByEmail} = require('../service');
+const {getUsers, getById , addUser, getByEmail} = require('../service');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
@@ -61,4 +61,4 @@ async function login(req, res) {
   }
 }
 
-module.exports = {register,login};
+module.exports = {register,login, get};
