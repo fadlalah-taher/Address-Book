@@ -9,6 +9,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
 
     const [field, setField] = useState(false);
+    const [emailInvalid, setEmailInvalid] = useState(false);
 
     async function onRegister(e){
         e.preventDefault();
@@ -21,9 +22,15 @@ const Register = () => {
         })
         .then(function (response) {
             console.log(response);
+            if(response['data']['message']){
+                setField(true);
+            }
+            if(response['data']['keyValue']){
+                setEmailInvalid(true);
+            }
             // window.location = "/";
         }).catch(function(response){
-            console.log(response);
+            console.log("response");
         })    
     };
 
@@ -65,6 +72,7 @@ const Register = () => {
               }}
             />
           </div>
+          {emailInvalid ? <div  className='invalidEmail'>This email already taken !</div> : ""}
           {field ? <div  className='forget'>Fill the fields !</div> : ""}
           <input type={"submit"} value="Register" className="registerBtn" />
           <div className='divider'/>
