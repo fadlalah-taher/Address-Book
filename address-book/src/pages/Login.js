@@ -13,7 +13,7 @@ const Login = () => {
       <div className='form-container'>
         <form className="add-form">
           <h1>Login</h1>
-          <div className="form-control">
+          <div className="input-login">
             <input
               type="text"
               placeholder={"Full Name"}
@@ -24,7 +24,7 @@ const Login = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="input-login">
             <input
               type="password"
               placeholder={"Password"}
@@ -35,9 +35,9 @@ const Login = () => {
             />
           </div>
           {field ? <div  className='forget'>Invalid email or password!</div> : ""}
-          <input type={"submit"} value="Login" className="btn btn-block" />
+          <input type={"submit"} value="Login" className="loginBtn" />
           <div className='divider'/>
-          <button className='btn btn-register'></button>
+          <button className='registerBtn'>Register</button>
           {/* <Link className='link' to="/Register">Register</Link> */}
         </form>
       </div>
