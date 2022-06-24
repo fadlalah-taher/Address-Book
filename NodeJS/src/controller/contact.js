@@ -29,7 +29,8 @@ async function deleteContact(req, res){ // success
     try{
         console.log(req.query.id);
         console.log(req.query);
-        const contact = await Contact.findByIdAndDelete(req.params.id);
+        console.log(req.params.id);
+        const contact = await Contact.findByIdAndDelete(req.query.id);
         return res.send({"success": true, "results": contact})
     }catch (error) {
         console.log(error);
@@ -54,6 +55,8 @@ async function getContacts(req, res) { // success
     } catch (error) {
       console.log(error);
     }
-  }
+}
+
+
 
 module.exports = {addContacts, getContacts, deleteContact};
