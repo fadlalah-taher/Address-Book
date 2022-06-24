@@ -4,14 +4,13 @@ const Contact = require("../../model/Contact");
 async function addContacts(req, res){
     try{
         const {fullname,  email, number, relationStatus, location} = req.body;
-        console.log(req.query);
         console.log(req.query.id);
         const contact = await new Contact({ fullname, email, number, relationStatus, location, "user": req.query.id});
         const result = await contact.save();
         
         return res.send({"success": true, "results": result});
     }catch (error) {
-        console.log(error);
+        console.log(error); 
     }
 }
 
@@ -38,12 +37,13 @@ async function getContacts(req, res) {
         return res.send(result);
       }
   
-      const result = await await Contact.find();//.populate('contacts');
+      const result = await Contact.find();//.populate('contacts');
       console.log('result =>', result);
   
       return res.send(result);
     } catch (error) {
-      console.log(error);
+        res.status(500).send(error);
+        console.log(error);
     }
 }
 
