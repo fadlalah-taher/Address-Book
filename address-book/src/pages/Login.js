@@ -14,7 +14,7 @@ const Login = () => {
       <div className='form-container'>
         <form className="add-form">
           <h1>Login</h1>
-          <div className="input-login">
+          <div className="input-field">
             <input
               type="text"
               placeholder={"Full Name"}
@@ -25,7 +25,7 @@ const Login = () => {
             />
           </div>
 
-          <div className="input-login">
+          <div className="input-field">
             <input
               type="password"
               placeholder={"Password"}
