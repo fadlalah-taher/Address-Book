@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     max: 1024,
   },
   contacts:[{
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.SchemaTypes.ObjectId,
     ref: 'Contact'
   }]
 });

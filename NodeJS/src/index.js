@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const {register, login, get} = require('./controller/user');
-const {addContacts, getContacts, deleteContact, updateContact} = require('./controller/contact');
+const {addContacts, getContacts, deleteContact, updateContact, getContactsByUserId} = require('./controller/contact');
 const router = Router();
 
 
@@ -10,6 +10,7 @@ router.post('/get', get);
 router.post('/addContacts', addContacts);
 router.post('/getContacts', getContacts);
 router.post('/deleteContact', deleteContact);
-router.post('/updateContact', updateContact);
+router.post('/updateContact', updateContact);getContactsByUserId
+router.post('/getContactsByUserId', getContactsByUserId);
 
 module.exports = router;

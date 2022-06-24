@@ -4,10 +4,11 @@ async function addContacts(req, res){
     try{
         const {fullname,  email, number, relationStatus, location} = req.body;
         console.log(req.query);
+        console.log(req.query.id);
         // console.log(req.user);
         // console.log(req.params);
         //console.log(req);
-        const contact = await new Contact({ fullname, email, number, relationStatus, location, "userId": req.query});
+        const contact = await new Contact({ fullname, email, number, relationStatus, location, "user": req.query.id});
         const result = await contact.save();
         
         return res.send({"success": true, "results": result});
@@ -48,6 +49,21 @@ async function getContacts(req, res) { // success
     }
 }
 
+// get Contacts to specific user by Id
+
+async function getContactsByUserId(req, res) { // success
+    try {
+        console.log(req.query);
+        console.log(req.query.id);
+
+        const result = await Contact.find({'user': req.query.id});
+        console.log('result of specific user =>', result);
+        return res.send({"success": true, "results": result})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 async function updateContact(req, res) {
     try{
@@ -60,4 +76,4 @@ async function updateContact(req, res) {
 }
 
 
-module.exports = {addContacts, getContacts, deleteContact, updateContact};
+module.exports = {addContacts, getContacts, deleteContact, updateContact, getContactsByUserId};

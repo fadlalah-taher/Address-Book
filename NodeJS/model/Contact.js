@@ -27,6 +27,7 @@ const contactSchema = new mongoose.Schema({
   },
   location: {
     type:{
+      type: String,
       enum: ['Point'],
       // required: true
     },
