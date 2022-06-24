@@ -22,10 +22,19 @@ const contactSchema = new mongoose.Schema({
   },
   relationStatus:{
     type: String,
+    enum: ['single', 'married', 'in relationship', 'divorced', 'widowed'],
     required: true,
-    min: 6,
-    max: 255,
   },
+  location:{
+    type:{
+      enum: ['Point'],
+      required:true
+    },
+    coordinates:{
+      type: [Number],
+      required: true
+    }
+  }
 });
 
 module.exports = mongoose.model('Contact', userSchema);
