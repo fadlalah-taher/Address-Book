@@ -28,11 +28,11 @@ const contactSchema = new mongoose.Schema({
   location: {
     type:{
       enum: ['Point'],
-      required:true
+      // required: true
     },
     coordinates:{
       type: [Number],
-      required: true
+      // required: true
     }
   },
   user: {
@@ -41,4 +41,4 @@ const contactSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Contact', userSchema);
+module.exports = mongoose.model('Contact', contactSchema);
