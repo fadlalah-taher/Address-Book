@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -9,11 +10,28 @@ const Register = () => {
 
     const [field, setField] = useState(false);
 
+    async function onRegister(e){
+        e.preventDefault();
+        let add = { name, email, password};
+        //Adding User
+        axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/user/register',
+        data: add,
+        })
+        .then(function (response) {
+            console.log(response);
+            // window.location = "/";
+        }).catch(function(response){
+            console.log(response);
+        })    
+    };
+
 
   return (
     <div className='body'>
       <div className='form-container'>
-        <form className="add-form">
+        <form className="add-form" onSubmit={onRegister}>
           <h1>Sign Up</h1>
           <div className="input-field">
             <input
