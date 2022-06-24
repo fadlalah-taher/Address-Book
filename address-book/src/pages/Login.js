@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState} from 'react';
+import {Link} from 'react-router-dom'
 
 const Login = () => {
 
@@ -37,7 +38,7 @@ const Login = () => {
           {field ? <div  className='forget'>Invalid email or password!</div> : ""}
           <input type={"submit"} value="Login" className="loginBtn" />
           <div className='divider'/>
-          <button className='registerBtn'>Register</button>
+          <button className='registerBtn'><Link className='link' to="/Register">Register</Link></button>
           {/* <Link className='link' to="/Register">Register</Link> */}
         </form>
       </div>
