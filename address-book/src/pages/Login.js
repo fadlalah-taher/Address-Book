@@ -10,7 +10,7 @@ const Login = () => {
 
   return (
     <div className='body'>
-      <div className='right-container'>
+      <div className='form-container'>
         <form className="add-form">
           <h1>Login</h1>
           <div className="form-control">
