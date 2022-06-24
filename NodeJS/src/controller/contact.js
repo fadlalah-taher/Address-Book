@@ -21,8 +21,16 @@ async function getContacts(req, res){
         return res.send({"success": true, "results": contacts})
     }catch (error) {
         console.log(error);
-    }
-    
+    }   
 }
 
-module.exports = {addContacts, getContacts};
+async function deleteContact(req, res){
+    try{
+        const contact = await Contact.findByIdAndDelete(req.params.id);
+        return res.send({"success": true, "results": contact})
+    }catch (error) {
+        console.log(error);
+    }   
+}
+
+module.exports = {addContacts, getContacts, deleteContact};
