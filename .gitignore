@@ -1,1 +1,22 @@
 NodeJS/node_modules
+# dependencies
+address-book/node_modules
+address-book/.pnp
+address-book/.pnp.js
+
+# testing
+address-book/coverage
+
+# production
+address-book/build
+
+# misc
+address-book/.DS_Store
+address-book/.env.local
+address-book/.env.development.local
+address-book/.env.test.local
+address-book/.env.production.local
+
+address-book/npm-debug.log*
+address-book/yarn-debug.log*
+address-book/yarn-error.log*
