@@ -16,20 +16,11 @@ async function addContacts(req, res){
     }
 }
 
-// async function getContacts(req, res){
-//     try{
-//         const contacts = await Contact.find({'userId': req.userId.id});
-//         return res.send({"success": true, "results": contacts})
-//     }catch (error) {
-//         console.log(error);
-//     }   
-// }
 
 async function deleteContact(req, res){ // success
     try{
         console.log(req.query.id);
-        console.log(req.query);
-        console.log(req.params.id);
+        // console.log(req.params.id);
         const contact = await Contact.findByIdAndDelete(req.query.id);
         return res.send({"success": true, "results": contact})
     }catch (error) {
@@ -41,7 +32,7 @@ async function getContacts(req, res) { // success
     try {
       console.log(req.query);
   
-      if (req.query.id) { // ?id=k1231 -> query paramet
+      if (req.query.id) { 
         const id = req.query.id;
         const result = await Contact.findById(id);
         console.log('result of specific user =>', result);
