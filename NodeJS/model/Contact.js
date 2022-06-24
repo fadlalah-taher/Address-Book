@@ -20,12 +20,12 @@ const contactSchema = new mongoose.Schema({
     min: 6,
     max: 1024,
   },
-  relationStatus:{
+  relationStatus: {
     type: String,
     enum: ['single', 'married', 'in relationship', 'divorced', 'widowed'],
     required: true,
   },
-  location:{
+  location: {
     type:{
       enum: ['Point'],
       required:true
@@ -34,6 +34,10 @@ const contactSchema = new mongoose.Schema({
       type: [Number],
       required: true
     }
+  },
+  user: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'User'
   }
 });
 
