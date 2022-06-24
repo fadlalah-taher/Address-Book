@@ -1,13 +1,11 @@
 const Contact = require("../../model/Contact");
 
+// Add Contact
 async function addContacts(req, res){
     try{
         const {fullname,  email, number, relationStatus, location} = req.body;
         console.log(req.query);
         console.log(req.query.id);
-        // console.log(req.user);
-        // console.log(req.params);
-        //console.log(req);
         const contact = await new Contact({ fullname, email, number, relationStatus, location, "user": req.query.id});
         const result = await contact.save();
         
@@ -17,11 +15,10 @@ async function addContacts(req, res){
     }
 }
 
-
-async function deleteContact(req, res){ // success
+// Delete Contact By ID
+async function deleteContact(req, res){ 
     try{
         console.log(req.query.id);
-        // console.log(req.params.id);
         const contact = await Contact.findByIdAndDelete(req.query.id);
         return res.send({"success": true, "results": contact})
     }catch (error) {
@@ -29,7 +26,8 @@ async function deleteContact(req, res){ // success
     }   
 }
 
-async function getContacts(req, res) { // success
+// Get all Contacts or get Contact By his ID
+async function getContacts(req, res) { 
     try {
       console.log(req.query);
   
@@ -49,7 +47,7 @@ async function getContacts(req, res) { // success
     }
 }
 
-// get Contacts to specific user by Id
+// get Contacts by specific user by Id
 
 async function getContactsByUserId(req, res) { // success
     try {
@@ -64,7 +62,7 @@ async function getContactsByUserId(req, res) { // success
     }
 }
 
-
+// Update Contact
 async function updateContact(req, res) {
     try{
         const {fullname,  email, number, relationStatus, location} = req.body;
