@@ -165,5 +165,14 @@ form select:focus{
   background-color: aqua;
   font-size: 20px;
   font-weight: 600;
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
+}
+
+.clickContact{
+  cursor: pointer;
+}
+.search{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
 }
