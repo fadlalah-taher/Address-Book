@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 const AddContact = () => {
     const [field, setField] = useState(false);
+    const [emailInvalid, setEmailInvalid] = useState(false);
+    const [success, setSuccess] = useState(false);
+
     const [fullname, setName] = useState("");
     const [email , setEmail] = useState("");
     const [number , setNumber] = useState("");
@@ -20,9 +23,20 @@ const AddContact = () => {
             data: add,
             })
             .then(function (response) {
-                console.log(response);
+                if(response['data']['results']){
+                    setSuccess(true);
+                    setEmailInvalid(false);
+                    setField(false);
+                }
+                if(response['data']['keyValue']){
+                    setEmailInvalid(true);
+                    setField(false);
+                    setSuccess(false);
+                }
                 if(response['data']['message']){
-                  setField(true);
+                    setField(true);
+                    setSuccess(false);
+                    setEmailInvalid(false);
                 }
             }).catch(function(response){
                 console.log("response");
@@ -82,6 +96,8 @@ const AddContact = () => {
             </select>
           </div>
           {field ? <div  className='popNotification'>Fill the fields !</div> : ""}
+          {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
+          {success ? <div  className='popNotification'>Created Successfully !</div> : ""}
           <input type={"submit"} value="Add Contact" className="registerBtn" />
           <div className='divider'/>
           <button className='register loginBtn'><Link className='link' to="/Contacts">Contacts</Link></button>
