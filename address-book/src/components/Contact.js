@@ -28,7 +28,6 @@ const Contact = () => {
     }
 
 
-console.log(contact.fullname);
     useEffect(() => {
         fetchContact();
     }, []);

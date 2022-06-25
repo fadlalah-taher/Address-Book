@@ -68,7 +68,6 @@ async function getContactsByUserId(req, res) { // success
 
 async function getContactById(req, res) { // success
     try {
-        console.log(req.query);
         console.log(req.query.id);
 
         const result = await Contact.find({'_id': req.query.id});

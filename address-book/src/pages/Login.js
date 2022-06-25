@@ -2,6 +2,7 @@ import React from 'react';
 import { useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import {AiOutlineMail} from "react-icons/ai";
 
 const Login = () => {
 
@@ -37,7 +38,7 @@ const Login = () => {
         <form className="add-form" onSubmit={onLogin}>
           <h1>Login</h1>
           <div className="input-field">
-            <input
+            <input 
               type="email"
               placeholder={"Email"}
               value={email}
