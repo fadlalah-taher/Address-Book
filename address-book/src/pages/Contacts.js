@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+
 
 const Contacts = () => {
     const [contacts, setContacts] = useState("");
@@ -9,9 +9,9 @@ const Contacts = () => {
     console.log(userId);
 
     const fetchContacts = async () => {
-        // Display Contact
+        // Display Contacts
         try{
-            await axios.post(`http://localhost:3000/contact/getContactsByUserId?id=${userId}`)//,{id: "62b5ba77b634c29f22cd7463"}
+            await axios.post(`http://localhost:3000/contact/getContactsByUserId?id=${userId}`)
             .then(res =>{
                 const data = res.data['results'];
                 console.log(res.data['results']);
@@ -40,7 +40,6 @@ try{
         </div>
         {contacts.map((value, index) => {
             return(
-                // <Link className='contacts-link' to="/Contact">
                 <div className='clickContact'  onClick={() => contactPage(value._id)}>
                     <div key={index} className='contacts-container'>   
                         <div>{value.fullname}</div>
@@ -50,16 +49,8 @@ try{
                         <div>Location</div>  
                     </div>
                 </div>
-                // </Link>
         )
         })}
-        {/* <div className='contacts-container'>   
-            <div>contact.fullname</div>
-            <div> contact.email</div>
-            <div>contact.number</div>
-            <div>contact.relationStatus</div>
-            <div>Location</div>  
-        </div> */}
     </div>
   )
     }catch(err){
