@@ -39,10 +39,18 @@ form input:focus{
   box-shadow: 0 0 8px rgb(239, 79, 95);
 }
 .body{
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(to right, rgb(239, 79, 95) , rgb(224, 159, 166));
+}
+.registerBody{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, steelblue , rgb(148, 161, 171));
 }
 .input-field{
   width: 100%;
