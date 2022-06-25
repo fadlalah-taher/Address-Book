@@ -38,6 +38,7 @@ async function register(req, res) {
       return res.send({ user: addUserResult._id });
     } catch (error) {
       return res.send(error);
+      // return res.status(400).send(error);
     }
 }
 
@@ -56,7 +57,6 @@ async function login(req, res) {
 
     return res.header('auth-token', token).send(token);
   } catch (error) {
-    console.log(error);
     res.status(500).send(error);
   }
 }

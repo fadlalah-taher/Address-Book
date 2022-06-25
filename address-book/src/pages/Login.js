@@ -19,7 +19,10 @@ const Login = () => {
           url: 'http://localhost:3000/api/user/login',
           data: item,
       }).then(function (response) {
-        window.location = '/Contacts';
+        setField(false);
+        console.log(response);
+        window.location = '/AddContact';
+        // window.location = '/Contacts';
       }).catch(function(response){
         setField(true);
         console.log(response);
