@@ -19,8 +19,6 @@ const Contact = () => {
                 const data = res.data['results'][0];
                 console.log(res.data['results'][0]);
                 setContact(data);
-                //const mydata = res.data;
-                //setOptions(mydata['options']);
             })
         } catch(err){
             //console.log(err);
@@ -34,9 +32,6 @@ const Contact = () => {
             .then(res =>{
                 console.log(res);
                 window.location = "/";
-                
-                //const mydata = res.data;
-                //setOptions(mydata['options']);
             })
         } catch(err){
             console.log(err);
