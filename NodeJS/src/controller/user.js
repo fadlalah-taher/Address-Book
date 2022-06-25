@@ -55,7 +55,7 @@ async function login(req, res) {
       TOKEN_SECRET
     );
 
-    return res.header('auth-token', token).send(token);
+    return res.header('auth-token', token).send({"token": token, "userid": user._id});
   } catch (error) {
     res.status(500).send(error);
   }
