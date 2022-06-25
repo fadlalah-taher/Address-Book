@@ -9,12 +9,13 @@ import {GiRelationshipBounds} from "react-icons/gi";
 import axios from 'axios';
 
 const Contact = () => {
-
     const [contact, setContact] = useState("");
+    let contactId = localStorage.getItem("contact_id");
+
     const fetchContact = async () => {
         // Display Contact
         try{
-            await axios.post(`http://localhost:3000/contact/getContactById?id=62b59d8261567545e34ea3f9`)//,{id: "62b5ba77b634c29f22cd7463"}
+            await axios.post(`http://localhost:3000/contact/getContactById?id=${contactId}`)//,{id: "62b5ba77b634c29f22cd7463"}
             .then(res =>{
                 const data = res.data['results'][0];
                 console.log(res.data['results'][0]);
@@ -28,7 +29,7 @@ const Contact = () => {
     // Delete Contact
     const deleteContact = async () => {
         try{
-            await axios.post(`http://localhost:3000/contact/deleteContact?id=62b59d8261567545e34ea3f9`)//,{id: "62b5ba77b634c29f22cd7463"}
+            await axios.post(`http://localhost:3000/contact/deleteContact?id=${contactId}`)//,{id: "62b5ba77b634c29f22cd7463"}
             .then(res =>{
                 console.log(res);
                 window.location = "/";
