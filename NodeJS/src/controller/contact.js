@@ -64,6 +64,21 @@ async function getContactsByUserId(req, res) { // success
     }
 }
 
+// get Contact by  Id
+
+async function getContactById(req, res) { // success
+    try {
+        console.log(req.query);
+        console.log(req.query.id);
+
+        const result = await Contact.find({'_id': req.query.id});
+        console.log('result of specific user =>', result);
+        return res.send({"success": true, "results": result})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 // Update Contact
 async function updateContact(req, res) {
     try{
@@ -76,4 +91,4 @@ async function updateContact(req, res) {
 }
 
 
-module.exports = {addContacts, getContacts, deleteContact, updateContact, getContactsByUserId};
+module.exports = {addContacts, getContacts, deleteContact, updateContact, getContactsByUserId, getContactById};
