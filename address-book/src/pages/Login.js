@@ -19,6 +19,8 @@ const Login = () => {
           url: 'http://localhost:3000/api/user/login',
           data: item,
       }).then(function (response) {
+        var token = response.data["userid"];
+        localStorage.setItem("access_token", token);
         setField(false);
         console.log(response);
         window.location = '/AddContact';
