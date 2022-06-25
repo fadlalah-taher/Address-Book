@@ -24,6 +24,18 @@ form{
   margin-bottom: 25px;
   box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.3);
 }
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 900px;
+  height: 400px;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: aqua;
+  font-size: 25px;
+  /* margin-bottom: 20px; */
+}
 
 form input{
   width: 100%;
@@ -41,9 +53,11 @@ form input:focus{
 .body{
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to right, rgb(239, 79, 95) , rgb(224, 159, 166));
+  /* gap: 20px; */
 }
 .registerBody{
   height: 100vh;
