@@ -11,18 +11,19 @@ const AddContact = () => {
     const [email , setEmail] = useState("");
     const [number , setNumber] = useState("");
     const [relationStatus , setRelationStatus] = useState("");
-
     async function onAddContact(e){
         e.preventDefault();
         let add = { fullname, email, number, relationStatus};
-        let idd = "62b4ade1a54383b555f5465e";
+        console.log(localStorage.getItem("access_token"));
+        let userId = localStorage.getItem("access_token");
         //Adding User
         axios({
             method: 'post',
-            url: `http://localhost:3000/contact/addContacts?id=${idd}`,
+            url: `http://localhost:3000/contact/addContacts?id=${userId}`,
             data: add,
             })
             .then(function (response) {
+                console.log(response);
                 if(response['data']['results']){
                     setSuccess(true);
                     setEmailInvalid(false);
