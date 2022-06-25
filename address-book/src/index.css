@@ -98,14 +98,8 @@ form input:focus{
   font-size: 20px;
 }
 
-.forget{
-  margin: 15px 0;
-  text-decoration: none;
-  color: rgb(239, 79, 95);
-  font-family: 'Arial';
-  font-size: 14px;
-}
-.invalidEmail{
+
+.popNotification{
   margin: 15px 0;
   text-decoration: none;
   color: rgb(239, 79, 95);

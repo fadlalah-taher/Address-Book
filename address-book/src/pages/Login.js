@@ -52,7 +52,7 @@ const Login = () => {
               }}
             />
           </div>
-          {field ? <div  className='forget'>Invalid email or password!</div> : ""}
+          {field ? <div  className='popNotification'>Invalid email or password!</div> : ""}
           <input type={"submit"} value="Login" className="loginBtn" />
           <div className='divider'/>
           <button className='registerBtn'><Link className='link' to="/Register">Register</Link></button>

@@ -8,6 +8,7 @@ const Register = () => {
     const [email , setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const [success, setSuccess] = useState(false);
     const [field, setField] = useState(false);
     const [emailInvalid, setEmailInvalid] = useState(false);
 
@@ -23,10 +24,19 @@ const Register = () => {
         .then(function (response) {
             console.log(response);
             if(response['data']['message']){
-                setField(true);
+              setField(true);
+              setEmailInvalid(false);
+              setSuccess(false);
             }
             if(response['data']['keyValue']){
-                setEmailInvalid(true);
+              setEmailInvalid(true);
+              setField(false);
+              setSuccess(false);
+            }
+            if(response['data']['user']){
+              setSuccess(true);
+              setEmailInvalid(false);
+              setField(false);
             }
             // window.location = "/";
         }).catch(function(response){
@@ -72,8 +82,9 @@ const Register = () => {
               }}
             />
           </div>
-          {emailInvalid ? <div  className='invalidEmail'>This email already taken !</div> : ""}
-          {field ? <div  className='forget'>Fill the fields !</div> : ""}
+          {success ? <div  className='popNotification'>Created Successfully !</div> : ""}
+          {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
+          {field ? <div  className='popNotification'>Fill the fields !</div> : ""}
           <input type={"submit"} value="Register" className="registerBtn" />
           <div className='divider'/>
           <button className='register loginBtn'><Link className='link' to="/">Login</Link></button>
