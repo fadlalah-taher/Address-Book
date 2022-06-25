@@ -32,7 +32,7 @@ const Contact = () => {
             await axios.post(`http://localhost:3000/contact/deleteContact?id=${contactId}`)//,{id: "62b5ba77b634c29f22cd7463"}
             .then(res =>{
                 console.log(res);
-                window.location = "/";
+                window.location = "/Contacts";
             })
         } catch(err){
             console.log(err);
