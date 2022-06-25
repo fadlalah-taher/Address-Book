@@ -24,7 +24,7 @@ const Login = () => {
         localStorage.setItem("access_token", token);
         setField(false);
         console.log(response);
-        window.location = '/AddContact';
+        window.location = '/Contacts';
         // window.location = '/Contacts';
       }).catch(function(response){
         setField(true);
