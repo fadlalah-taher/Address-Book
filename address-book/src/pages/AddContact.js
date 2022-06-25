@@ -12,11 +12,11 @@ const AddContact = () => {
     async function onAddContact(e){
         e.preventDefault();
         let add = { fullname, email, number, relationStatus};
-        //let idd = "62b4ade1a54383b555f5465e";
+        let idd = "62b4ade1a54383b555f5465e";
         //Adding User
         axios({
             method: 'post',
-            url: 'http://localhost:3000/contact/addContacts',
+            url: `http://localhost:3000/contact/addContacts?id=${idd}`,
             data: add,
             })
             .then(function (response) {
