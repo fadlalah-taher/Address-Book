@@ -19,7 +19,7 @@ const Login = () => {
           url: 'http://localhost:3000/api/user/login',
           data: item,
       }).then(function (response) {
-        console.log(response);
+        window.location = '/Contacts';
       }).catch(function(response){
         setField(true);
         console.log(response);
@@ -33,8 +33,8 @@ const Login = () => {
           <h1>Login</h1>
           <div className="input-field">
             <input
-              type="text"
-              placeholder={"Full Name"}
+              type="email"
+              placeholder={"Email"}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
