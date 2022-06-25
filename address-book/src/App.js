@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Contacts from './pages/Contacts';
+import AddContact from './pages/AddContact';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path='/' element={<><Login /></>}> </Route>
       <Route path='/Register' element={<><Register /></>}> </Route>
       <Route path='/Contacts' element={<><Contacts /></>}> </Route>
+      <Route path='/AddContact' element={<><AddContact /></>}> </Route>
       </Routes>
     </BrowserRouter>
   );
