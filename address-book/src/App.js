@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Contacts from './pages/Contacts';
 import AddContact from './pages/AddContact';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path='/Register' element={<><Register /></>}> </Route>
       <Route path='/Contacts' element={<><Contacts /></>}> </Route>
       <Route path='/AddContact' element={<><AddContact /></>}> </Route>
+      <Route path='/Contact' element={<><Contact /></>}> </Route>
       </Routes>
     </BrowserRouter>
   );
