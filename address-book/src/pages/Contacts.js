@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Contacts = () => {
@@ -37,6 +38,7 @@ try{
             <input placeholder={"Name"}/>
             <input placeholder={"Email"}/>
             <input placeholder='relation'/>
+            <button className='registerBtn'><Link className='link' to="/AddContact">Add Contact</Link></button>
         </div>
         {contacts.map((value, index) => {
             return(
