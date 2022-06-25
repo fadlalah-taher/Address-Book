@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+
 const AddContact = () => {
+    
     const [field, setField] = useState(false);
     const [emailInvalid, setEmailInvalid] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -43,13 +45,6 @@ const AddContact = () => {
                 console.log("response");
             })
     }
-// function onAddContact(e){
-//     e.preventDefault();
-//     console.log(name);
-//     console.log(email);
-//     console.log(number);
-//     console.log(relationStatus);
-// }
 
   return (
     <div className='body'>
