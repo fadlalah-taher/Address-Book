@@ -126,10 +126,12 @@ form select:focus{
   font-size: 14px;
 }
 /* Contact */
-
+.contact{
+  display: flex;
+}
 .contact-container{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-between;
   width: 900px;
   height: 400px;
@@ -140,7 +142,28 @@ form select:focus{
   font-weight: 600;
   /* margin-bottom: 20px; */
 }
-.contact-container > div:first-child{
+.contact-container .contact-left > div:first-child{
   font-size: 40px;
   font-weight: 900;
+}
+.contact-left{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.deleteIcon{
+  cursor: pointer;
+}
+/* Contacts */
+.contacts-container{
+  display: flex;
+  justify-content: space-between;
+  width: 1100px;
+  height: 120px;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: aqua;
+  font-size: 20px;
+  font-weight: 600;
+  /* margin-bottom: 20px; */
 }
