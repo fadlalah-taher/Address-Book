@@ -10,6 +10,7 @@ async function addContacts(req, res){
         
         return res.send({"success": true, "results": result});
     }catch (error) {
+        res.send(error);
         console.log(error); 
     }
 }
@@ -21,6 +22,7 @@ async function deleteContact(req, res){
         const contact = await Contact.findByIdAndDelete(req.query.id);
         return res.send({"success": true, "results": contact})
     }catch (error) {
+        res.send(error);
         console.log(error);
     }   
 }
