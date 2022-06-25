@@ -46,6 +46,15 @@ form input:focus{
 }
 .input-field{
   width: 100%;
+  border: #b8a8a8;
+}
+.select-field{
+  width: 100%;
+  height: 35px;
+}
+form select:focus{
+  border-color: rgb(239, 79, 95);
+  box-shadow: 0 0 8px rgb(239, 79, 95);
 }
 .add-form > h1{
   margin-bottom: 20px;
