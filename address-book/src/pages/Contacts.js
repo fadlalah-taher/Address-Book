@@ -52,7 +52,7 @@ function filterContacts(){
 console.log(contacts);
     useEffect(() => {
         fetchContacts();
-    }, [user_id]);//user_id
+    }, [user_id]);
 try{
   return (
     <>

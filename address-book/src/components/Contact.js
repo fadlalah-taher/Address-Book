@@ -43,13 +43,6 @@ const Contact = () => {
             console.log(err);
         }
     }
-    
-
-// let latt = contact['location']['coordinates'][0];
-// let lngg = contact['location']['coordinates'][1];
-// localStorage.setItem("contactInfo",JSON.stringify(contact));
-// localStorage.setItem("lat-coordinate", latt);
-// localStorage.setItem("lng-coordinate", lngg);
 
     useEffect(() => {
         fetchContact();

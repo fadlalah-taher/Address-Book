@@ -18,15 +18,13 @@ const Map = ({latLngg}) => {
     const [lag, setLag] = useState(35.492409);
    
     const [position, setPosition] = useState(null);
-    
+
     // Events
     const HandleClickMap = () =>{
         const map = useMapEvents({
             click(e){
                 setPosition(e.latlng);
                 map.flyTo(e.latlng)
-                // console.log(position.lat);
-                // console.log(position.lng);
                 localStorage.setItem("coordinateLat", position.lat);
                 localStorage.setItem("coordinateLng", position.lng);
             }
