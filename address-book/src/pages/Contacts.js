@@ -67,11 +67,11 @@ try{
             return(
                 <div className='clickContact'  onClick={() => contactPage(value._id)}>
                     <div key={index} className='contacts-container'>   
-                        <div className='contacts-item'>{value.fullname}</div>
-                        <div className='contacts-item'>✉️ {value.email}</div>
-                        <div className='contacts-item'>📞 {value.number}</div>
-                        <div className='contacts-item'>🗺️ {value.relationStatus}</div>
-                        <div className='contacts-item'>🗺️</div>  
+                        <div>{value.fullname}</div>
+                        <div>✉️ {value.email}</div>
+                        <div>📞 {value.number}</div>
+                        <div>👥 {value.relationStatus}</div>
+                        <div>🗺️</div>  
                     </div>
                 </div>
         )

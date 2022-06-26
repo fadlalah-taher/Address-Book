@@ -87,7 +87,6 @@ form input:focus{
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(rgb(239, 79, 95) , rgb(224, 159, 166));
-  /* gap: 20px; */
 }
 .body-contacts{
   height: 130vh;
@@ -162,6 +161,7 @@ form select:focus{
   font-weight: 700;
   transition: 0.5s;
   margin-top: 10px;
+  cursor: pointer;
 }
 .registerBtn:hover{
   background-color: rgb(3, 101, 182);
@@ -192,9 +192,10 @@ form select:focus{
   height: 400px;
   padding: 50px;
   border-radius: 20px;
-  background-color: aqua;
+  background-color: rgba(53,69,102,255);
   font-size: 30px;
   font-weight: 600;
+  color: white;
   /* margin-bottom: 20px; */
 }
 .contact-container .contact-left > div:first-child{
@@ -228,13 +229,6 @@ form select:focus{
   font-size: 25px;
   font-weight: 1300;
 }
-/* .contacts-container > .contacts-item{
-  display: flex;
-  justify-content: start;
-  align-items: flex-start;
-  padding-right: 50px;
-  /* margin-left: 20px; */
-/* }  */
 
 .clickContact{
   cursor: pointer;
@@ -271,10 +265,6 @@ form select:focus{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* .leaflet-container {
-  width: 10%;
-  height: 50vh;
-} */
 .contact-right > div:first-child{
   margin-bottom: 80px;
   margin-left: 180px;
