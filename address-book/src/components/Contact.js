@@ -64,7 +64,7 @@ const Contact = () => {
                 </div>
                 <div className='contact-right'>
                     <div ><AiFillDelete size={"100px"}  onClick={deleteContact} className="deleteIcon"/></div>
-                    <div><FcInternal size={"100px"}/><FcGlobe size={"100px"}/> <FcInternal size={"100px"}/> </div> 
+                    <div><FcInternal className='direction' size={"100px"}/><FcGlobe size={"100px"}/> <FcInternal className='direction' size={"100px"}/> </div> 
                 </div>
             </div>
         </div>
