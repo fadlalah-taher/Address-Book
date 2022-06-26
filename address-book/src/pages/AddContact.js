@@ -112,7 +112,7 @@ const AddContact = () => {
         </form>
       </div>
     </div>
-    <Map/>
+    <Map latLngg={true}/>
     </div>
   )
 }

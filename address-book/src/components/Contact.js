@@ -11,6 +11,7 @@ import Navbar from './Navbar';
 import Map from './Map';
 
 const Contact = () => {
+    
     const [contact, setContact] = useState("");
     let contactId = localStorage.getItem("contact_id");
 
@@ -22,6 +23,8 @@ const Contact = () => {
                 const data = res.data['results'][0];
                 console.log(res.data['results'][0]);
                 setContact(data);
+                localStorage.setItem("lat-coordinates", res.data['results'][0]['location']["coordinates"][0]);
+                localStorage.setItem("lng-coordinates", res.data['results'][0]['location']["coordinates"][1]);
             })
         } catch(err){
             //console.log(err);
@@ -40,8 +43,14 @@ const Contact = () => {
             console.log(err);
         }
     }
-  
-console.log(contact.location);
+    
+
+// let latt = contact['location']['coordinates'][0];
+// let lngg = contact['location']['coordinates'][1];
+// localStorage.setItem("contactInfo",JSON.stringify(contact));
+// localStorage.setItem("lat-coordinate", latt);
+// localStorage.setItem("lng-coordinate", lngg);
+
     useEffect(() => {
         fetchContact();
     }, []);
@@ -67,7 +76,7 @@ console.log(contact.location);
         </div>
     </div>
     </IconContext.Provider>
-    <Map/>
+    <Map latLngg={false} />
     </>
   )
 }
