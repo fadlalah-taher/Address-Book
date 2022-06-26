@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Contacts from './pages/Contacts';
 import AddContact from './pages/AddContact';
 import Contact from './components/Contact';
+import Map from './components/Map';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Route path='/Contacts' element={<><Contacts /></>}> </Route>
       <Route path='/AddContact' element={<><AddContact /></>}> </Route>
       <Route path='/Contact' element={<><Contact /></>}> </Route>
+      <Route path='/Map' element={<><Map /></>}> </Route>
+
       </Routes>
     </BrowserRouter>
   );
