@@ -2,13 +2,13 @@ import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import Navbar from '../components/Navbar';
 
 const Contacts = () => {
     var [user_id, setUserId] = useState("");
     var [contacts, setContacts] = useState("");
     var [filter, setFilter] = useState("");
-    
+
     var userId = localStorage.getItem("access_token");
     const filter_input = useRef();
 
@@ -55,6 +55,8 @@ console.log(contacts);
     }, [user_id]);//user_id
 try{
   return (
+    <>
+    <Navbar name={"Logout"} redirect={"/"}/>
     <div className='body-contacts'>
         <div className='search'>
             <input ref={filter_input} onInput={() =>{filterContacts()}} placeholder={"All"}/>
@@ -64,16 +66,17 @@ try{
             return(
                 <div className='clickContact'  onClick={() => contactPage(value._id)}>
                     <div key={index} className='contacts-container'>   
-                        <div>{value.fullname}</div>
-                        <div>{value.email}</div>
-                        <div>{value.number}</div>
-                        <div>{value.relationStatus}</div>
-                        <div>Location</div>  
+                        <div className='contacts-item'>{value.fullname}</div>
+                        <div className='contacts-item'>✉️ {value.email}</div>
+                        <div className='contacts-item'>📞 {value.number}</div>
+                        <div className='contacts-item'>🗺️ {value.relationStatus}</div>
+                        <div className='contacts-item'>🗺️ Location</div>  
                     </div>
                 </div>
         )
         })}
     </div>
+    </>
   )
     }catch(err){ 
         console.log(err);

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Map from '../components/Map';
 import {FcLeftDown2} from 'react-icons/fc';
+import Navbar from '../components/Navbar';
 
 const AddContact = () => {
     
@@ -55,6 +56,7 @@ const AddContact = () => {
 
   return (
     <div>
+      <Navbar/>
     <div className='body'>
       {/* <Map/> */}
       <div className='form-container'>
@@ -100,7 +102,7 @@ const AddContact = () => {
                 <option value="widowed">Widowed</option>
             </select>
           </div>
-          <div className='clickLocation'>Select Location Click Below <FcLeftDown2/> </div>
+          <div className='clickLocation'>Select Location  Below <FcLeftDown2/> </div>
           {field ? <div  className='popNotification'>Fill the fields !</div> : ""}
           {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
           {success ? <div  className='popNotification'>Created Successfully !</div> : ""}

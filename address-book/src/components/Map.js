@@ -35,7 +35,7 @@ const Map = ({latlng}) => {
   return (
     <div>
         {/* {position == null ? null : <> <p>"lat:" {position.lat} </p> <p>"lag:" {position.lng} </p>/ */}
-        <MapContainer center={[lat, lag]} zoom={5}  scrollWheelZoom={true}>
+        <MapContainer center={[lat, lag]} zoom={9}  scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

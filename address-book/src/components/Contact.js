@@ -7,6 +7,8 @@ import {BsFillTelephoneFill} from "react-icons/bs";
 import {GiRelationshipBounds} from "react-icons/gi";
 
 import axios from 'axios';
+import Navbar from './Navbar';
+import Map from './Map';
 
 const Contact = () => {
     const [contact, setContact] = useState("");
@@ -39,12 +41,15 @@ const Contact = () => {
         }
     }
   
-
+console.log(contact.location);
     useEffect(() => {
         fetchContact();
     }, []);
+
   return (
+    <>
     <IconContext.Provider value={{color:'rgb(239, 79, 95)'}}>
+    <Navbar name={"Contacts"} redirect={"/Contacts"}/>
     <div className='body'>
         <div className='contact'>
             <div className='contact-container'>
@@ -55,13 +60,15 @@ const Contact = () => {
                     <div><GiRelationshipBounds/>{contact.relationStatus}</div>
                 </div>
                 <div className='contact-right'>
-                    <div>Location</div>
+                    <div>Location Below</div>
                     <div ><AiFillDelete onClick={deleteContact} className="deleteIcon"/>Delete Contact</div>
                 </div>
             </div>
         </div>
     </div>
     </IconContext.Provider>
+    <Map/>
+    </>
   )
 }
 
