@@ -49,17 +49,18 @@ function filterContacts(){
     }
 }
 
-console.log(contacts);
+
     useEffect(() => {
         fetchContacts();
     }, [user_id]);
+
 try{
   return (
     <>
     <Navbar name={"Logout"} redirect={"/"}/>
     <div className='body-contacts'>
         <div className='search'>
-            <input ref={filter_input} onInput={() =>{filterContacts()}} placeholder={"All"}/>
+            <input ref={filter_input} onInput={() =>{filterContacts()}} placeholder={"Search"}/>
             <button className='registerBtn'><Link className='link' to="/AddContact">Add Contact</Link></button>
         </div>
         {filter.map((value, index) => {
@@ -70,7 +71,7 @@ try{
                         <div className='contacts-item'>✉️ {value.email}</div>
                         <div className='contacts-item'>📞 {value.number}</div>
                         <div className='contacts-item'>🗺️ {value.relationStatus}</div>
-                        <div className='contacts-item'>🗺️ Location</div>  
+                        <div className='contacts-item'>🗺️</div>  
                     </div>
                 </div>
         )

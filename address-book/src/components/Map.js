@@ -25,6 +25,8 @@ const Map = ({latLngg}) => {
             click(e){
                 setPosition(e.latlng);
                 map.flyTo(e.latlng)
+                console.log(position.lat);
+                console.log(position.lng);
                 localStorage.setItem("coordinateLat", position.lat);
                 localStorage.setItem("coordinateLng", position.lng);
             }
@@ -39,7 +41,7 @@ const Map = ({latLngg}) => {
   return (
     <div>
         {/* {position == null ? null : <> <p>"lat:" {position.lat} </p> <p>"lag:" {position.lng} </p>/ */}
-        <MapContainer center={[lat, lag]} zoom={9}  scrollWheelZoom={true}>
+        <MapContainer center={[lat, lag]} zoom={4}  scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
