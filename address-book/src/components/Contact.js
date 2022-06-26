@@ -5,6 +5,7 @@ import { IconContext } from 'react-icons';
 import {AiOutlineMail,AiFillDelete} from "react-icons/ai";
 import {BsFillTelephoneFill} from "react-icons/bs";
 import {GiRelationshipBounds} from "react-icons/gi";
+import { FcGlobe, FcInternal,FcLeft } from "react-icons/fc";
 
 import axios from 'axios';
 import Navbar from './Navbar';
@@ -62,8 +63,8 @@ const Contact = () => {
                     <div><GiRelationshipBounds/>{contact.relationStatus}</div>
                 </div>
                 <div className='contact-right'>
-                    <div>Location Below</div>
-                    <div ><AiFillDelete onClick={deleteContact} className="deleteIcon"/>Delete Contact</div>
+                    <div ><AiFillDelete size={"100px"}  onClick={deleteContact} className="deleteIcon"/></div>
+                    <div><FcInternal size={"100px"}/><FcGlobe size={"100px"}/> <FcInternal size={"100px"}/> </div> 
                 </div>
             </div>
         </div>

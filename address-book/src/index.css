@@ -256,7 +256,7 @@ form select:focus{
   border-radius: 5px;
   border: 1px solid rgb(218, 214, 214);
   outline: none;
-  font-size: 16px;
+  font-size: 22px;
 }
 .search input:focus{
   border-color: rgba(53,69,102,255);
@@ -275,3 +275,7 @@ form select:focus{
   width: 10%;
   height: 50vh;
 } */
+.contact-right > div:first-child{
+  margin-bottom: 80px;
+  margin-left: 180px;
+}
