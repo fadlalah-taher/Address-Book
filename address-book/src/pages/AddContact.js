@@ -56,7 +56,7 @@ const AddContact = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar name={"Logout"} redirect={"/Login"}/>
     <div className='body'>
       {/* <Map/> */}
       <div className='form-container'>
