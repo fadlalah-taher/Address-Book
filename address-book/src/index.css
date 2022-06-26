@@ -81,6 +81,7 @@ form select:focus{
   font-family: 'Arial';
   font-weight: 700;
   transition: 0.5s;
+  cursor: pointer;
 }
 .register{
   margin-top: 20px;
@@ -190,3 +191,7 @@ form select:focus{
   border-color: aqua;
   box-shadow: 0 0 8px aqua;
 }
+/* .leaflet-container {
+  width: 10%;
+  height: 50vh;
+} */
