@@ -58,7 +58,6 @@ const AddContact = () => {
     <div>
       <Navbar name={"Logout"} redirect={"/"}/>
     <div className='body'>
-      {/* <Map/> */}
       <div className='form-container'>
         <form className="add-form" onSubmit={onAddContact}>
           <h1>Add Contact</h1>

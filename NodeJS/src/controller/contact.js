@@ -39,7 +39,7 @@ async function getContacts(req, res) {
         return res.send(result);
       }
   
-      const result = await Contact.find();//.populate('contacts');
+      const result = await Contact.find();
       console.log('result =>', result);
   
       return res.send(result);
@@ -51,7 +51,7 @@ async function getContacts(req, res) {
 
 // get Contacts by specific user by Id
 
-async function getContactsByUserId(req, res) { // success
+async function getContactsByUserId(req, res) {
     try {
         console.log(req.query);
         console.log(req.query.id);
@@ -66,7 +66,7 @@ async function getContactsByUserId(req, res) { // success
 
 // get Contact by  Id
 
-async function getContactById(req, res) { // success
+async function getContactById(req, res) { 
     try {
         console.log(req.query.id);
 

@@ -9,7 +9,7 @@ async function get(req, res) {
   try {
     console.log(req.query);
 
-    if (req.query.id) { // ?id=k1231 -> query paramet
+    if (req.query.id) { 
       const id = req.query.id;
       const result = await getById(id);
       console.log('result of specific user =>', result);
