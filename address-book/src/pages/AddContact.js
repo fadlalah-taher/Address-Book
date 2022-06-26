@@ -2,6 +2,9 @@ import React from 'react'
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Map from '../components/Map';
+import { LatLng } from 'leaflet';
+// import '../App.css'
 
 const AddContact = () => {
     
@@ -15,7 +18,11 @@ const AddContact = () => {
     const [relationStatus , setRelationStatus] = useState("");
     async function onAddContact(e){
         e.preventDefault();
-        let add = { fullname, email, number, relationStatus};
+        let coordinatesLng = localStorage.getItem("coordinateLng");
+        let coordinatesLat = localStorage.getItem("coordinateLat");
+        console.log(coordinatesLng);
+        console.log(coordinatesLat);
+        let add = { fullname, email, number, relationStatus, location:{"coordinates":[coordinatesLat,coordinatesLng]}};
         console.log(localStorage.getItem("access_token"));
         let userId = localStorage.getItem("access_token");
         //Adding User
@@ -46,8 +53,13 @@ const AddContact = () => {
             })
     }
 
+    
+    console.log("Fadel");
+
   return (
+    <div>
     <div className='body'>
+      {/* <Map/> */}
       <div className='form-container'>
         <form className="add-form" onSubmit={onAddContact}>
           <h1>Add Contact</h1>
@@ -91,6 +103,7 @@ const AddContact = () => {
                 <option value="widowed">Widowed</option>
             </select>
           </div>
+          {/* <div><Map/></div> */}
           {field ? <div  className='popNotification'>Fill the fields !</div> : ""}
           {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
           {success ? <div  className='popNotification'>Created Successfully !</div> : ""}
@@ -99,6 +112,8 @@ const AddContact = () => {
           <button className='register loginBtn'><Link className='link' to="/Contacts">Contacts</Link></button>
         </form>
       </div>
+    </div>
+    <Map/>
     </div>
   )
 }
