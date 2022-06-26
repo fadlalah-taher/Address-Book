@@ -2,6 +2,7 @@ import React from 'react';
 import { useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
 
 
 const Login = () => {
@@ -33,6 +34,8 @@ const Login = () => {
     }
 
   return (
+    <>
+    <Navbar name={"Sign Up"} redirect={"/Register"}/>
     <div className='body'>
       <div className='form-container'>
         <form className="add-form" onSubmit={onLogin}>
@@ -66,6 +69,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 

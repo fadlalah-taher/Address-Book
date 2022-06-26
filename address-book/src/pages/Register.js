@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -46,6 +47,8 @@ const Register = () => {
 
 
   return (
+    <>
+    <Navbar name={"Login"} redirect={"/"}/>
     <div className='registerBody'>
       <div className='form-container'>
         <form className="add-form" onSubmit={onRegister}>
@@ -91,6 +94,7 @@ const Register = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 
