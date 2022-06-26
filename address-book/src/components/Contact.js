@@ -40,7 +40,6 @@ const Contact = () => {
     }
   
 
-
     useEffect(() => {
         fetchContact();
     }, []);

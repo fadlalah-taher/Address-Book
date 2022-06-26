@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Map from '../components/Map';
-import { LatLng } from 'leaflet';
-// import '../App.css'
+import {FcLeftDown2} from 'react-icons/fc';
 
 const AddContact = () => {
     
@@ -53,8 +52,6 @@ const AddContact = () => {
             })
     }
 
-    
-    console.log("Fadel");
 
   return (
     <div>
@@ -103,7 +100,7 @@ const AddContact = () => {
                 <option value="widowed">Widowed</option>
             </select>
           </div>
-          {/* <div><Map/></div> */}
+          <div className='clickLocation'>Select Location Click Below <FcLeftDown2/> </div>
           {field ? <div  className='popNotification'>Fill the fields !</div> : ""}
           {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
           {success ? <div  className='popNotification'>Created Successfully !</div> : ""}
