@@ -45,6 +45,7 @@
 .navBtn:hover{
   background-color: rgb(225, 25, 45);
 }
+/* Form */
 .form-container{
   display: flex;
   flex-direction: column;
@@ -172,7 +173,6 @@ form select:focus{
   font-size: 20px;
 }
 
-
 .popNotification{
   margin: 15px 0;
   text-decoration: none;
@@ -196,7 +196,6 @@ form select:focus{
   font-size: 30px;
   font-weight: 600;
   color: white;
-  /* margin-bottom: 20px; */
 }
 .contact-container .contact-left > div:first-child{
   font-size: 40px;
@@ -210,6 +209,7 @@ form select:focus{
 .deleteIcon{
   cursor: pointer;
 }
+
 /* Contacts */
 .contacts-container{
   display: flex;
@@ -268,4 +268,18 @@ form select:focus{
 .contact-right > div:first-child{
   margin-bottom: 80px;
   margin-left: 180px;
+}
+
+/* Media Query */
+@media (max-width: 1200px) {
+  .contacts-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 300px;
+  }
+  .body-contacts{
+    height: 100%;
+  }
 }
