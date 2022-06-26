@@ -33,7 +33,7 @@ console.log(contacts);
     }, []);
 try{
   return (
-    <div className='body'>
+    <div className='body-contacts'>
         <div className='search'>
             <input placeholder={"Name"}/>
             <input placeholder={"Email"}/>
