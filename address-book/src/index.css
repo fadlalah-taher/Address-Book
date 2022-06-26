@@ -47,6 +47,15 @@ form input:focus{
   background-image: linear-gradient(to right, rgb(239, 79, 95) , rgb(224, 159, 166));
   /* gap: 20px; */
 }
+.body-contacts{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, rgb(239, 79, 95) , rgb(224, 159, 166));
+  
+}
 .registerBody{
   height: 100vh;
   display: flex;
@@ -176,6 +185,7 @@ form select:focus{
   display: flex;
   gap: 20px;
   margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 .search input{
@@ -190,6 +200,11 @@ form select:focus{
 .search input:focus{
   border-color: aqua;
   box-shadow: 0 0 8px aqua;
+}
+.clickLocation{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /* .leaflet-container {
   width: 10%;
