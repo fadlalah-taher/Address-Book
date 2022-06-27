@@ -45,7 +45,8 @@
 .navBtn:hover{
   background-color: rgb(225, 25, 45);
 }
-/* Form */
+
+/* Form  */
 .form-container{
   display: flex;
   flex-direction: column;
@@ -67,7 +68,6 @@ form{
   box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.3);
   margin-top: -50px;
 }
-
 form input{
   width: 100%;
   padding: 15px;
@@ -136,7 +136,6 @@ form select:focus{
   transition: 0.5s;
   cursor: pointer;
 }
-
 .register{
   margin-top: 20px;
   border: none;
@@ -172,7 +171,6 @@ form select:focus{
   color: #f4f4f4;
   font-size: 20px;
 }
-
 .popNotification{
   margin: 15px 0;
   text-decoration: none;
@@ -196,6 +194,7 @@ form select:focus{
   font-size: 30px;
   font-weight: 600;
   color: white;
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.3);
 }
 .contact-container .contact-left > div:first-child{
   font-size: 40px;
@@ -229,6 +228,7 @@ form select:focus{
   margin-bottom: 20px;
   gap: 10px;
   color: white;
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.3);
 }
 .contacts-container > div:first-child{
   font-size: 25px;
@@ -238,6 +238,8 @@ form select:focus{
 .clickContact{
   cursor: pointer;
 }
+
+/* Search Input Inside Contacts */
 .search{
   display: flex;
   justify-content: space-around;
@@ -295,6 +297,9 @@ form select:focus{
     height: 400px;
     padding: 50px;
   }
+  .direction{
+    display: none;
+  }
 }
 
 @media (max-width: 700px) {
@@ -314,9 +319,6 @@ form select:focus{
   .contact-right > div:first-child{
     margin-bottom: 10px;
     margin-left: 100px;
-  }
-  .direction{
-    display: none;
   }
   .contact-right > div:last-child{
     margin-left: 100px;
