@@ -20,10 +20,9 @@ const AddContact = () => {
         e.preventDefault();
         let coordinatesLng = localStorage.getItem("coordinateLng");
         let coordinatesLat = localStorage.getItem("coordinateLat");
-        console.log(coordinatesLng);
-        console.log(coordinatesLat);
+        
         let add = { fullname, email, number, relationStatus, location:{"coordinates":[coordinatesLat,coordinatesLng]}};
-        console.log(localStorage.getItem("access_token"));
+        
         let userId = localStorage.getItem("access_token");
         //Adding User
         axios({
@@ -32,7 +31,6 @@ const AddContact = () => {
             data: add,
             })
             .then(function (response) {
-                console.log(response);
                 if(response['data']['results']){
                     setSuccess(true);
                     setEmailInvalid(false);
@@ -53,7 +51,7 @@ const AddContact = () => {
                     setEmailInvalid(false);
                 }
             }).catch(function(response){
-                console.log("response");
+                // console.log(response);
             })
     }
 

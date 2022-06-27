@@ -18,7 +18,6 @@ const Contacts = () => {
             await axios.post(`http://localhost:3000/contact/getContactsByUserId?id=${userId}`)
             .then(res =>{
                 const data = res.data['results'];
-                // console.log(res.data['results']);
                 setContacts(data);
                 setFilter(data);
                 setUserId(user_id);

@@ -26,10 +26,9 @@ const Login = () => {
         setField(false);
         console.log(response);
         window.location = '/Contacts';
-        // window.location = '/Contacts';
       }).catch(function(response){
         setField(true);
-        console.log(response);
+        // console.log(response);
     })
     }
 
@@ -65,7 +64,6 @@ const Login = () => {
           <input type={"submit"} value="Login" className="loginBtn" />
           <div className='divider'/>
           <button className='registerBtn'><Link className='link' to="/Register">Register</Link></button>
-          {/* <Link className='link' to="/Register">Register</Link> */}
         </form>
       </div>
     </div>

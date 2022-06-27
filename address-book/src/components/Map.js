@@ -23,8 +23,8 @@ const Map = ({latLngg}) => {
             click(e){
                 setPosition(e.latlng);
                 map.flyTo(e.latlng)
-                console.log(position.lat);
-                console.log(position.lng);
+                // console.log(position.lat);
+                // console.log(position.lng);
                 localStorage.setItem("coordinateLat", position.lat);
                 localStorage.setItem("coordinateLng", position.lng);
             }

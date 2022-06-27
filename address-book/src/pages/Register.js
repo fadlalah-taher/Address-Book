@@ -23,7 +23,7 @@ const Register = () => {
         data: add,
         })
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             if(response['data']['message']){
               setField(true);
               setEmailInvalid(false);
@@ -42,9 +42,8 @@ const Register = () => {
               setEmail("");
               setPassword("");
             }
-            // window.location = "/";
         }).catch(function(response){
-            console.log("response");
+            // console.log(response);
         })    
     };
 
