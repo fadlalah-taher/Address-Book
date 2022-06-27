@@ -11,7 +11,6 @@ async function addContacts(req, res){
         return res.send({"success": true, "results": result});
     }catch (error) {
         res.send(error);
-        console.log(error); 
     }
 }
 

@@ -22,7 +22,6 @@ const Contact = () => {
             await axios.post(`http://localhost:3000/contact/getContactById?id=${contactId}`)//,{id: "62b5ba77b634c29f22cd7463"}
             .then(res =>{
                 const data = res.data['results'][0];
-                console.log(res.data['results'][0]);
                 setContact(data);
                 localStorage.setItem("lat-coordinates", res.data['results'][0]['location']["coordinates"][0]);
                 localStorage.setItem("lng-coordinates", res.data['results'][0]['location']["coordinates"][1]);

@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 
 import '../App.css';
 import { useState } from "react";
-import AddContact from '../pages/AddContact';
 
 
 const Map = ({latLngg}) => {
@@ -13,7 +12,6 @@ const Map = ({latLngg}) => {
 
     let latMarker = parseFloat(latCoordinate);
     let lngMarker = parseFloat(lngCoordinate);
-
     const [lat, setLat] = useState(33.884211);
     const [lag, setLag] = useState(35.492409);
    
@@ -36,11 +34,9 @@ const Map = ({latLngg}) => {
         : <Marker position={position}></Marker>;
     };
     
-
     
   return (
     <div>
-        {/* {position == null ? null : <> <p>"lat:" {position.lat} </p> <p>"lag:" {position.lng} </p>/ */}
         <MapContainer center={[lat, lag]} zoom={4}  scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -53,7 +49,6 @@ const Map = ({latLngg}) => {
                 </Popup>
             </Marker>}
         </MapContainer> 
-        {/* <AddContact/> */}
     </div>
   )
 }

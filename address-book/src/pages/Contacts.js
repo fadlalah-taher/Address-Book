@@ -18,7 +18,7 @@ const Contacts = () => {
             await axios.post(`http://localhost:3000/contact/getContactsByUserId?id=${userId}`)
             .then(res =>{
                 const data = res.data['results'];
-                console.log(res.data['results']);
+                // console.log(res.data['results']);
                 setContacts(data);
                 setFilter(data);
                 setUserId(user_id);
@@ -65,7 +65,7 @@ try{
         </div>
         {filter.map((value, index) => {
             return(
-                <div className='clickContact'  onClick={() => contactPage(value._id)}>
+                <div className='clickContact' key={index}  onClick={() => contactPage(value._id)}>
                     <div key={index} className='contacts-container'>   
                         <div>{value.fullname}</div>
                         <div>✉️ {value.email}</div>
@@ -80,7 +80,6 @@ try{
     </>
   )
     }catch(err){ 
-        console.log(err);
         return (<div>Loading.......</div>)
      }
 }
