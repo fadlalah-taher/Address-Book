@@ -90,7 +90,8 @@ form input:focus{
   background-image: linear-gradient(rgb(239, 79, 95) , rgb(224, 159, 166));
 }
 .body-contacts{
-  height: 100%;
+  min-height: 100vh;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
