@@ -37,6 +37,10 @@ const AddContact = () => {
                     setSuccess(true);
                     setEmailInvalid(false);
                     setField(false);
+                    setName("");
+                    setEmail("");
+                    setNumber("");
+                    setRelationStatus("");
                 }
                 if(response['data']['keyValue']){
                     setEmailInvalid(true);
@@ -95,6 +99,7 @@ const AddContact = () => {
           </div>
           <div className="input-field">
             <select id='question_type' className="select-field" value={relationStatus}   onChange={(e) => {setRelationStatus(e.target.value)}}>
+                <option value="">RelationShip Status</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
                 <option value="divorced">Divorced</option>
@@ -104,7 +109,7 @@ const AddContact = () => {
           <div className='clickLocation'>Select Location  Below <FcLeftDown2/> </div>
           {field ? <div  className='popNotification'>Fill the fields !</div> : ""}
           {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
-          {success ? <div  className='popNotification'>Created Successfully !</div> : ""}
+          {success ? <div  className='popNotification'>Added Successfully !</div> : ""}
           <input type={"submit"} value="Add Contact" className="registerBtn" />
           <div className='divider'/>
           <button className='register loginBtn'><Link className='link' to="/Contacts">Contacts</Link></button>

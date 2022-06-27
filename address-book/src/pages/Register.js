@@ -38,6 +38,9 @@ const Register = () => {
               setSuccess(true);
               setEmailInvalid(false);
               setField(false);
+              setName("");
+              setEmail("");
+              setPassword("");
             }
             // window.location = "/";
         }).catch(function(response){
