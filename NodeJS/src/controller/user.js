@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
 
 
-
 async function get(req, res) {
   try {
     console.log(req.query);

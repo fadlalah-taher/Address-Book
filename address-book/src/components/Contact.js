@@ -34,7 +34,7 @@ const Contact = () => {
     // Delete Contact
     const deleteContact = async () => {
         try{
-            await axios.post(`http://localhost:3000/contact/deleteContact?id=${contactId}`)//,{id: "62b5ba77b634c29f22cd7463"}
+            await axios.post(`http://localhost:3000/contact/deleteContact?id=${contactId}`)
             .then(res =>{
                 console.log(res);
                 window.location = "/Contacts";
