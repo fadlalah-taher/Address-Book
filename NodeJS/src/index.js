@@ -10,7 +10,7 @@ router.post('/get', get);
 router.post('/addContacts', addContacts);
 router.post('/getContacts', getContacts);
 router.post('/deleteContact', deleteContact);
-router.post('/updateContact', updateContact);getContactsByUserId
+router.post('/updateContact', updateContact);
 router.post('/getContactsByUserId', getContactsByUserId);
 router.post('/getContactById', getContactById);
 
