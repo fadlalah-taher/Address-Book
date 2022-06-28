@@ -79,14 +79,20 @@ async function getContactById(req, res) {
 
 // Update Contact
 async function updateContact(req, res) {
-    try{
-        const {fullname,  email, number, relationStatus, location} = req.body;
-        const contact = await Contact.findByIdAndUpdate(req.query.id, {fullname,  email, number, relationStatus, location})
-        return res.send({"success": true, "results": contact})
-    }catch (error) {
-        console.log(error);
+    try {
+      const contact = await Contact.findByIdAndUpdate( { _id: req.query.id } ,{
+          $set: {
+            fullname: req.body.fullname,
+            email: req.body.email,
+            number: req.body.number,
+            relationStatus: req.body.relationStatus,
+            location: req.body.location,
+          },
+      });
+      return res.send({"Contact Successfully Updated": true, "results": contact});
+    } catch (error) {
+      console.log("Fail", error);
     }
 }
-
 
 module.exports = {addContacts, getContacts, deleteContact, updateContact, getContactsByUserId, getContactById};
