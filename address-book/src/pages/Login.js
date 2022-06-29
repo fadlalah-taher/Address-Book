@@ -13,23 +13,23 @@ const Login = () => {
     const [field, setField] = useState(false);
 
     async function onLogin(e){
-        e.preventDefault();
-        let item = {email,password};
-  
-        axios({
-          method: 'post',
-          url: 'http://localhost:3000/api/user/login',
-          data: item,
+      e.preventDefault();
+      let item = {email,password};
+
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/user/login',
+        data: item,
       }).then(function (response) {
         var token = response.data["userid"];
         localStorage.setItem("access_token", token);
         setField(false);
-        console.log(response);
+        // console.log(response);
         window.location = '/Contacts';
       }).catch(function(response){
         setField(true);
         // console.log(response);
-    })
+      })
     }
 
   return (

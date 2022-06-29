@@ -22,14 +22,18 @@ const Map = ({latLngg}) => {
         const map = useMapEvents({
             click(e){
                 setPosition(e.latlng);
-                map.flyTo(e.latlng)
-                // console.log(position.lat);
-                // console.log(position.lng);
-                localStorage.setItem("coordinateLat", position.lat);
-                localStorage.setItem("coordinateLng", position.lng);
+                map.flyTo(e.latlng);
+                try{
+                    console.log(position.lat);
+                    console.log(position.lng);
+                    localStorage.setItem("coordinateLat", position.lat);
+                    localStorage.setItem("coordinateLng", position.lng);
+                }catch(res){
+                    console.log("Click");
+                }  
             }
         })
-        return position== null
+        return position == null
         ? null 
         : <Marker position={position}></Marker>;
     };
