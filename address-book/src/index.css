@@ -321,6 +321,10 @@ form select:focus{
   .globalIcon{
     margin-left: 180px;
   }
+  /* .updateBtn{
+    margin-left: 55px;
+  } */
+  
 }
 
 @media (max-width: 700px) {
@@ -346,6 +350,13 @@ form select:focus{
   }
   .globalIcon{
     margin-left: 0px;
+  }
+  .emailIcon{
+    display: none;
+  }
+  .contact-left{
+    justify-content: center;
+    align-items: center;
   }
   
 }

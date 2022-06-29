@@ -101,23 +101,23 @@ const Contact = () => {
     <>
     <IconContext.Provider value={{color:'rgb(239, 79, 95)'}}>
     <Navbar name={"Contacts"} redirect={"/Contacts"}/>
-    <div className='body'>
-        <div className='contact'>
-            <div className='contact-container'>
-                <div className='contact-left'>
-                    <div>{contact.fullname}</div>
-                    <div><AiOutlineMail/>  {contact.email}</div>
-                    <div><BsFillTelephoneFill/>{contact.number}</div>
-                    <div><GiRelationshipBounds/>{contact.relationStatus}</div>
-                    <button className='updateBtn' onClick={updateContact}>Update</button>
-                </div>
-                <div className='contact-right'>
-                    <div ><AiFillDelete size={"100px"}  onClick={deleteContact} className="deleteIcon"/></div>
-                    <div><FcInternal className='direction' size={"100px"}/><FcGlobe className='globalIcon' size={"100px"}/> <FcInternal className='direction' size={"100px"}/> </div> 
+        <div className='body'>
+            <div className='contact'>
+                <div className='contact-container'>
+                    <div className='contact-left'>
+                        <div>{contact.fullname}</div>
+                        <div><AiOutlineMail className='emailIcon'/>  {contact.email}</div>
+                        <div><BsFillTelephoneFill/>{contact.number}</div>
+                        <div><GiRelationshipBounds/>{contact.relationStatus}</div>
+                        <button className='updateBtn' onClick={updateContact}>Update</button>
+                    </div>
+                    <div className='contact-right'>
+                        <div ><AiFillDelete size={"100px"}  onClick={deleteContact} className="deleteIcon"/></div>
+                        <div><FcInternal className='direction' size={"100px"}/><FcGlobe className='globalIcon' size={"100px"}/> <FcInternal className='direction' size={"100px"}/> </div> 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </IconContext.Provider>
     <Map latLngg={false} />
     </>
