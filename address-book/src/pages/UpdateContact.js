@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
 
 const UpdateContact = () => {
     let contactId = localStorage.getItem("contact_id");
@@ -55,6 +56,7 @@ const UpdateContact = () => {
 
   return (
     <div>
+    <Navbar name={"Contacts"} redirect={"/Contacts"}/>
       <div className='body'>
       <div className='form-container'>
         <form className="add-form" onSubmit={updateContact}>
