@@ -50,50 +50,51 @@ const Contact = () => {
 
     // Calling Update 
     const updateContact = async () =>{
-        let updateTrue = true;
-        alert("Select what to change");
-        let what_to_change = prompt("Enter N to change the contact name || E to change the contact Email || P to change the contact Phone number || R to change the contact RelationShip status");
-        if(what_to_change === "N" || what_to_change === "n"){
-            let new_name = prompt("Chosse new name");
-            var info = {"fullname" : new_name};
-            alert(`Name has been updated to ${new_name}`);
-        }
-        else if(what_to_change === "E" || what_to_change === "e"){
-            let new_email = prompt("Chosse new email");
-            var info = {"email" : new_email};
-            alert(`Email has been updated to ${new_email}`);
-        }
-        else if(what_to_change === "P" || what_to_change === "p"){
-            let new_phone_number = prompt("Chosse new phone number");
-            var info = {"number" : new_phone_number};
-            alert(`Phone number has been updated to ${new_phone_number}`);
-        }
-        else if(what_to_change === "R" || what_to_change === "r"){
-            let new_status = prompt("Chosse new status");
-            var info = {"relationStatus" : new_status};
-            alert(`RelationShip Status  has been updated to ${new_status}`);
-        }
-        else{
-            updateTrue = false;
-            alert("Nothing Change!");
-        }
+        window.location='/UpdateContact';
+        // let updateTrue = true;
+        // alert("Select what to change");
+        // let what_to_change = prompt("Enter N to change the contact name || E to change the contact Email || P to change the contact Phone number || R to change the contact RelationShip status");
+        // if(what_to_change === "N" || what_to_change === "n"){
+        //     let new_name = prompt("Chosse new name");
+        //     var info = {"fullname" : new_name};
+        //     alert(`Name has been updated to ${new_name}`);
+        // }
+        // else if(what_to_change === "E" || what_to_change === "e"){
+        //     let new_email = prompt("Chosse new email");
+        //     var info = {"email" : new_email};
+        //     alert(`Email has been updated to ${new_email}`);
+        // }
+        // else if(what_to_change === "P" || what_to_change === "p"){
+        //     let new_phone_number = prompt("Chosse new phone number");
+        //     var info = {"number" : new_phone_number};
+        //     alert(`Phone number has been updated to ${new_phone_number}`);
+        // }
+        // else if(what_to_change === "R" || what_to_change === "r"){
+        //     let new_status = prompt("Chosse new status");
+        //     var info = {"relationStatus" : new_status};
+        //     alert(`RelationShip Status  has been updated to ${new_status}`);
+        // }
+        // else{
+        //     updateTrue = false;
+        //     alert("Nothing Change!");
+        // }
 
-        // Update 
-        if(updateTrue){
-            try{
-                axios({
-                method: 'post',
-                url: `http://localhost:3000/contact/updateContact?id=${contactId}`,
-                data: info,
-                })
-                .then(function (response) {
-                    console.log(response);
-                    window.location.reload();
-                });
-            }catch(err){
-                console.log(err);
-            }
-        }
+        // // Update 
+        // if(updateTrue){
+        //     try{
+        //         axios({
+        //         method: 'post',
+        //         url: `http://localhost:3000/contact/updateContact?id=${contactId}`,
+        //         data: info,
+        //         })
+        //         .then(function (response) {
+        //             console.log(response);
+        //             window.location.reload();
+        //         });
+        //     }catch(err){
+        //         console.log(err);
+        //     }
+        // }
     }
     
     
