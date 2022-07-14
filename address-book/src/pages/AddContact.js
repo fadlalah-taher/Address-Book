@@ -6,6 +6,10 @@ import Map from '../components/Map';
 import {FcLeftDown2} from 'react-icons/fc';
 import Navbar from '../components/Navbar';
 
+import { FaUserAlt } from "react-icons/fa";
+import { FaEnvelope} from "react-icons/fa";
+import { MdPhone } from "react-icons/md";
+
 const AddContact = () => {
     
     const [field, setField] = useState(false);
@@ -64,6 +68,7 @@ const AddContact = () => {
         <form className="add-form" onSubmit={onAddContact}>
           <h1>Add Contact</h1>
           <div className="input-field">
+          <span className='icon'><FaUserAlt/></span>
             <input
               type="text"
               placeholder={"Full Name"}
@@ -75,6 +80,7 @@ const AddContact = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><FaEnvelope/></span>
             <input
               type="email"
               placeholder={"Email"}
@@ -86,6 +92,7 @@ const AddContact = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><MdPhone/></span>
             <input
               type="text"
               placeholder={"Phone Number"}

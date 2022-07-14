@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 
+import { FaUserAlt } from "react-icons/fa";
+import { FaEnvelope} from "react-icons/fa";
+import { MdPhone } from "react-icons/md";
+
 const UpdateContact = () => {
     let contactId = localStorage.getItem("contact_id");
     const [fullname, setName] = useState("");
@@ -62,6 +66,7 @@ const UpdateContact = () => {
         <form className="add-form" onSubmit={updateContact}>
           <h1>Update Contact</h1>
           <div className="input-field">
+          <span className='icon'><FaUserAlt/></span>
             <input
               type="text"
               placeholder={contact['fullname']}
@@ -73,6 +78,7 @@ const UpdateContact = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><FaEnvelope/></span>
             <input
               type="email"
               placeholder={contact['email']}
@@ -84,6 +90,7 @@ const UpdateContact = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><MdPhone/></span>
             <input
               type="text"
               placeholder={contact['number']}

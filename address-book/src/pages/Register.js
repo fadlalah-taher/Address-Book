@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 
+import { AiOutlineUser } from "react-icons/ai";
+import { FaEnvelope } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
+import { MdOutlineLock } from "react-icons/md";
+import { MdEnhancedEncryption } from "react-icons/md";
 const Register = () => {
     const [name, setName] = useState("");
     const [email , setEmail] = useState("");
@@ -56,6 +61,7 @@ const Register = () => {
         <form className="add-form" onSubmit={onRegister}>
           <h1>Sign Up</h1>
           <div className="input-field">
+          <span className='icon'><FaUserAlt/></span>
             <input
               type="text"
               placeholder={"Full Name"}
@@ -67,6 +73,7 @@ const Register = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><FaEnvelope/></span>
             <input
               type="email"
               placeholder={"Email"}
@@ -78,6 +85,8 @@ const Register = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><MdEnhancedEncryption/></span>
+          <span className='icon'><MdOutlineLock/></span>
             <input
               type="password"
               placeholder={"Password"}

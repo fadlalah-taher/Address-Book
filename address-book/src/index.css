@@ -71,7 +71,7 @@ form{
 }
 form input{
   width: 100%;
-  padding: 15px;
+  padding:  15px 15px 15px 50px;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid rgb(218, 214, 214);
@@ -107,8 +107,34 @@ form input:focus{
   background-image: linear-gradient(steelblue , rgb(148, 161, 171));
 }
 .input-field{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   border: #b8a8a8;
+}
+.icon{
+  position: absolute;
+  left: 10px;
+  top: 0;
+  font-size: 25px;
+  color: rgb(239, 79, 95);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-eye{
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 25px;
+  color: rgb(239, 79, 95);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .select-field{
   width: 100%;

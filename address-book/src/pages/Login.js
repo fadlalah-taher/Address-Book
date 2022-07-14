@@ -4,6 +4,12 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { FaEnvelope } from "react-icons/fa";
+import { MdOutlineLock } from "react-icons/md";
+import { MdEnhancedEncryption } from "react-icons/md";
+
+
 
 const Login = () => {
 
@@ -40,6 +46,7 @@ const Login = () => {
         <form className="add-form" onSubmit={onLogin}>
           <h1>Login</h1>
           <div className="input-field">
+          <span className='icon'><FaEnvelope/></span>
             <input 
               type="email"
               placeholder={"Email"}
@@ -51,6 +58,8 @@ const Login = () => {
           </div>
 
           <div className="input-field">
+          <span className='icon'><MdEnhancedEncryption/></span>
+          <span className='icon'><MdOutlineLock/></span>
             <input
               type="password"
               placeholder={"Password"}
@@ -59,6 +68,7 @@ const Login = () => {
                 setPwd(e.target.value);
               }}
             />
+            <span className='icon-eye'><AiFillEyeInvisible/></span>
           </div>
           {field ? <div  className='popNotification'>Invalid email or password!</div> : ""}
           <input type={"submit"} value="Login" className="loginBtn" />

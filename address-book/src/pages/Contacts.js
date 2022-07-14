@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
+import { FaEnvelope} from "react-icons/fa";
+import { MdPhone } from "react-icons/md";
+
 const Contacts = () => {
     var [user_id, setUserId] = useState("");
     var [contacts, setContacts] = useState("");
@@ -67,8 +70,8 @@ try{
                 <div className='clickContact' key={index}  onClick={() => contactPage(value._id)}>
                     <div key={index} className='contacts-container'>   
                         <div>{value.fullname}</div>
-                        <div>✉️ {value.email}</div>
-                        <div>📞 {value.number}</div>
+                        <div><FaEnvelope fontSize={"18px"} color={"rgb(239, 79, 95)"}/> {value.email}</div>
+                        <div><MdPhone fontSize={"25px"} color={"rgb(239, 79, 95)"}/> {value.number}</div>
                         <div>👥 {value.relationStatus}</div>
                         <div>🗺️</div>  
                     </div>
