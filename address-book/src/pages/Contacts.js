@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 
 import { FaEnvelope} from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
+import { FaUserFriends } from "react-icons/fa";
 
 const Contacts = () => {
     var [user_id, setUserId] = useState("");
@@ -72,7 +73,7 @@ try{
                         <div>{value.fullname}</div>
                         <div><FaEnvelope fontSize={"18px"} color={"rgb(239, 79, 95)"}/> {value.email}</div>
                         <div><MdPhone fontSize={"25px"} color={"rgb(239, 79, 95)"}/> {value.number}</div>
-                        <div>👥 {value.relationStatus}</div>
+                        <div><FaUserFriends fontSize={"25px"} color={"rgb(239, 79, 95)"}/> {value.relationStatus}</div>
                         <div>🗺️</div>  
                     </div>
                 </div>
