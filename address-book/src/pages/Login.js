@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 
-import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEyeInvisible,AiFillEye } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
 import { MdOutlineLock } from "react-icons/md";
 import { MdEnhancedEncryption } from "react-icons/md";
@@ -13,30 +13,36 @@ import { MdEnhancedEncryption } from "react-icons/md";
 
 const Login = () => {
 
-    const [email , setEmail] = useState("");
-    const [password , setPwd] = useState("");
+  const [passwordState, setPasswordState] = useState(false);
 
-    const [field, setField] = useState(false);
+  const [email , setEmail] = useState("");
+  const [password , setPwd] = useState("");
 
-    async function onLogin(e){
-      e.preventDefault();
-      let item = {email,password};
+  const [field, setField] = useState(false);
 
-      axios({
-        method: 'post',
-        url: 'http://localhost:3000/api/user/login',
-        data: item,
-      }).then(function (response) {
-        var token = response.data["userid"];
-        localStorage.setItem("access_token", token);
-        setField(false);
-        // console.log(response);
-        window.location = '/Contacts';
-      }).catch(function(response){
-        setField(true);
-        // console.log(response);
-      })
-    }
+  async function onLogin(e){
+    e.preventDefault();
+    let item = {email,password};
+
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/api/user/login',
+      data: item,
+    }).then(function (response) {
+      var token = response.data["userid"];
+      localStorage.setItem("access_token", token);
+      setField(false);
+      // console.log(response);
+      window.location = '/Contacts';
+    }).catch(function(response){
+      setField(true);
+      // console.log(response);
+    })
+  }
+
+  const togglePassword = () => {
+    setPasswordState(prevState => !prevState);
+  }
 
   return (
     <>
@@ -61,14 +67,14 @@ const Login = () => {
           <span className='icon'><MdEnhancedEncryption/></span>
           <span className='icon'><MdOutlineLock/></span>
             <input
-              type="password"
+              type={passwordState ? "text" : "password"}
               placeholder={"Password"}
               value={password}
               onChange={(e) => {
                 setPwd(e.target.value);
               }}
             />
-            <span className='icon-eye'><AiFillEyeInvisible/></span>
+            <span className='icon-eye' onClick={togglePassword}>{passwordState ? <AiFillEye/> :<AiFillEyeInvisible/>}</span>
           </div>
           {field ? <div  className='popNotification'>Invalid email or password!</div> : ""}
           <input type={"submit"} value="Login" className="loginBtn" />
