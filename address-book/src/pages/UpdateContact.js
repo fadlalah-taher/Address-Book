@@ -9,52 +9,53 @@ import { FaEnvelope} from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
 
 const UpdateContact = () => {
-    let contactId = localStorage.getItem("contact_id");
-    const [fullname, setName] = useState("");
-    const [email , setEmail] = useState("");
-    const [number , setNumber] = useState("");
-    const [contact, setContact] = useState("");
-    const [relationStatus , setRelationStatus] = useState("");
 
-    const fetchContact = async () => {
-        // Display Contact
-        try{
-            await axios.post(`http://localhost:3000/contact/getContactById?id=${contactId}`)
-            .then(res =>{
-                const data = res.data['results'][0];
-                setContact(data);
-                setEmail(data['email']);
-                setNumber(data['number']);
-                setName(data['fullname']);
-                setRelationStatus(data['relationStatus']);
-            })
-        } catch(err){
-            //console.log(err);
-        }
-    }
+  let contactId = localStorage.getItem("contact_id");
+  const [fullname, setName] = useState("");
+  const [email , setEmail] = useState("");
+  const [number , setNumber] = useState("");
+  const [contact, setContact] = useState("");
+  const [relationStatus , setRelationStatus] = useState("");
 
-    // Update Contact
-    const updateContact = async (e) => {
-        e.preventDefault();
-        var info = {fullname, email, number, relationStatus};
-        try{
-            axios({
-                method: 'post',
-                url: `http://localhost:3000/contact/updateContact?id=${contactId}`,
-                data: info,
-                })
-                .then(function (response) {
-                    console.log(response);
-                    window.location.reload();
-                });
-        } catch(err){
-            console.log(err);
-        }
-    }
+  const fetchContact = async () => {
+      // Display Contact
+      try{
+          await axios.post(`http://localhost:3000/contact/getContactById?id=${contactId}`)
+          .then(res =>{
+              const data = res.data['results'][0];
+              setContact(data);
+              setEmail(data['email']);
+              setNumber(data['number']);
+              setName(data['fullname']);
+              setRelationStatus(data['relationStatus']);
+          })
+      } catch(err){
+          //console.log(err);
+      }
+  }
 
-    useEffect(() => {
-        fetchContact();
-    }, []);
+  // Update Contact
+  const updateContact = async (e) => {
+      e.preventDefault();
+      var info = {fullname, email, number, relationStatus};
+      try{
+          axios({
+              method: 'post',
+              url: `http://localhost:3000/contact/updateContact?id=${contactId}`,
+              data: info,
+              })
+              .then(function (response) {
+                  console.log(response);
+                  window.location.reload();
+              });
+      } catch(err){
+          console.log(err);
+      }
+  }
+
+  useEffect(() => {
+      fetchContact();
+  }, []);
 
 
 

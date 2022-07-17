@@ -4,59 +4,59 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 
-import { AiOutlineUser } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineLock } from "react-icons/md";
 import { MdEnhancedEncryption } from "react-icons/md";
 import { AiFillEyeInvisible,AiFillEye } from "react-icons/ai";
 const Register = () => {
-    const [name, setName] = useState("");
-    const [email , setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
-    const [success, setSuccess] = useState(false);
-    const [field, setField] = useState(false);
-    const [emailInvalid, setEmailInvalid] = useState(false);
-    const [passwordState, setPasswordState] = useState(false);
+  const [name, setName] = useState("");
+  const [email , setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    async function onRegister(e){
-        e.preventDefault();
-        let add = { name, email, password};
-        //Adding User
-        axios({
-        method: 'post',
-        url: 'http://localhost:3000/api/user/register',
-        data: add,
-        })
-        .then(function (response) {
-            // console.log(response);
-            if(response['data']['message']){
-              setField(true);
-              setEmailInvalid(false);
-              setSuccess(false);
-            }
-            if(response['data']['keyValue']){
-              setEmailInvalid(true);
-              setField(false);
-              setSuccess(false);
-            }
-            if(response['data']['user']){
-              setSuccess(true);
-              setEmailInvalid(false);
-              setField(false);
-              setName("");
-              setEmail("");
-              setPassword("");
-            }
-        }).catch(function(response){
-            // console.log(response);
-        })    
-    };
+  const [success, setSuccess] = useState(false);
+  const [field, setField] = useState(false);
+  const [emailInvalid, setEmailInvalid] = useState(false);
+  const [passwordState, setPasswordState] = useState(false);
 
-    const togglePassword = () => {
-      setPasswordState(prevState => !prevState);
-    }
+  async function onRegister(e){
+      e.preventDefault();
+      let add = { name, email, password};
+      //Adding User
+      axios({
+      method: 'post',
+      url: 'http://localhost:3000/api/user/register',
+      data: add,
+      })
+      .then(function (response) {
+          // console.log(response);
+          if(response['data']['message']){
+            setField(true);
+            setEmailInvalid(false);
+            setSuccess(false);
+          }
+          if(response['data']['keyValue']){
+            setEmailInvalid(true);
+            setField(false);
+            setSuccess(false);
+          }
+          if(response['data']['user']){
+            setSuccess(true);
+            setEmailInvalid(false);
+            setField(false);
+            setName("");
+            setEmail("");
+            setPassword("");
+          }
+      }).catch(function(response){
+          // console.log(response);
+      })    
+  };
+
+  const togglePassword = () => {
+    setPasswordState(prevState => !prevState);
+  }
 
 
   return (

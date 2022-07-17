@@ -11,53 +11,53 @@ import { FaEnvelope} from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
 
 const AddContact = () => {
-    
-    const [field, setField] = useState(false);
-    const [emailInvalid, setEmailInvalid] = useState(false);
-    const [success, setSuccess] = useState(false);
+ 
+  const [field, setField] = useState(false);
+  const [emailInvalid, setEmailInvalid] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-    const [fullname, setName] = useState("");
-    const [email , setEmail] = useState("");
-    const [number , setNumber] = useState("");
-    const [relationStatus , setRelationStatus] = useState("");
-    async function onAddContact(e){
-        e.preventDefault();
-        let coordinatesLng = localStorage.getItem("coordinateLng");
-        let coordinatesLat = localStorage.getItem("coordinateLat");
-        
-        let add = { fullname, email, number, relationStatus, location:{"coordinates":[coordinatesLat,coordinatesLng]}};
-        
-        let userId = localStorage.getItem("access_token");
-        //Adding User
-        axios({
-            method: 'post',
-            url: `http://localhost:3000/contact/addContacts?id=${userId}`,
-            data: add,
-            })
-            .then(function (response) {
-                if(response['data']['results']){
-                    setSuccess(true);
-                    setEmailInvalid(false);
-                    setField(false);
-                    setName("");
-                    setEmail("");
-                    setNumber("");
-                    setRelationStatus("");
-                }
-                if(response['data']['keyValue']){
-                    setEmailInvalid(true);
-                    setField(false);
-                    setSuccess(false);
-                }
-                if(response['data']['message']){
-                    setField(true);
-                    setSuccess(false);
-                    setEmailInvalid(false);
-                }
-            }).catch(function(response){
-                // console.log(response);
-            })
-    }
+  const [fullname, setName] = useState("");
+  const [email , setEmail] = useState("");
+  const [number , setNumber] = useState("");
+  const [relationStatus , setRelationStatus] = useState("");
+  async function onAddContact(e){
+      e.preventDefault();
+      let coordinatesLng = localStorage.getItem("coordinateLng");
+      let coordinatesLat = localStorage.getItem("coordinateLat");
+      
+      let add = { fullname, email, number, relationStatus, location:{"coordinates":[coordinatesLat,coordinatesLng]}};
+      
+      let userId = localStorage.getItem("access_token");
+      //Adding User
+      axios({
+          method: 'post',
+          url: `http://localhost:3000/contact/addContacts?id=${userId}`,
+          data: add,
+          })
+          .then(function (response) {
+              if(response['data']['results']){
+                  setSuccess(true);
+                  setEmailInvalid(false);
+                  setField(false);
+                  setName("");
+                  setEmail("");
+                  setNumber("");
+                  setRelationStatus("");
+              }
+              if(response['data']['keyValue']){
+                  setEmailInvalid(true);
+                  setField(false);
+                  setSuccess(false);
+              }
+              if(response['data']['message']){
+                  setField(true);
+                  setSuccess(false);
+                  setEmailInvalid(false);
+              }
+          }).catch(function(response){
+              // console.log(response);
+          })
+  }
 
 
   return (
