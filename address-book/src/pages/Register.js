@@ -9,6 +9,7 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineLock } from "react-icons/md";
 import { MdEnhancedEncryption } from "react-icons/md";
+import { AiFillEyeInvisible,AiFillEye } from "react-icons/ai";
 const Register = () => {
     const [name, setName] = useState("");
     const [email , setEmail] = useState("");
@@ -17,6 +18,7 @@ const Register = () => {
     const [success, setSuccess] = useState(false);
     const [field, setField] = useState(false);
     const [emailInvalid, setEmailInvalid] = useState(false);
+    const [passwordState, setPasswordState] = useState(false);
 
     async function onRegister(e){
         e.preventDefault();
@@ -51,6 +53,10 @@ const Register = () => {
             // console.log(response);
         })    
     };
+
+    const togglePassword = () => {
+      setPasswordState(prevState => !prevState);
+    }
 
 
   return (
@@ -88,13 +94,14 @@ const Register = () => {
           <span className='icon'><MdEnhancedEncryption/></span>
           <span className='icon'><MdOutlineLock/></span>
             <input
-              type="password"
+              type={passwordState? "text" : "password"}
               placeholder={"Password"}
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
+            <span className='icon-eye' onClick={togglePassword}>{passwordState ? <AiFillEye/> :<AiFillEyeInvisible/>}</span>
           </div>
           {success ? <div  className='popNotification'>Created Successfully !</div> : ""}
           {emailInvalid ? <div  className='popNotification'>This email already taken !</div> : ""}
